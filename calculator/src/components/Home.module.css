@@ -1,0 +1,64 @@
+/* Apply to all, padding, margin, box-sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    height: 100vh;
+    /* Vertical Height of the entire page */
+    width: 100vh;
+    /* view width */
+    display: flex;
+    /* Dispaly calculator in the middle */
+    justify-content: center;
+    /* Horizontal centered */
+    align-items: center;
+    /* Vertically centered */
+}
+
+.inner {
+    height: 640px;
+    width: 425px;
+    border-radius: 30px;
+    background-color: black;
+    box-shadow: 20px 20px 60px #8e8d8d,
+        -20px -20px 60px #ffff;
+}
+
+.result {
+    font-size: 2rem;
+    width: 405px;
+    height: 90px;
+    scrollbar-width: none;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background-color: black;
+    box-shadow: 10px 10px 30px #8e8d8d,
+        -10px -10px 30px #ffff;
+}
+
+.resbox {
+    width: 390px;
+    height: min-content;
+    overflow-y: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: right;
+    padding-top: 15px;
+}
+
+
+
+.btns {
+    height: 530px;
+    width: 425px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 30px;
+}
