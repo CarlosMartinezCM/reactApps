@@ -7,7 +7,8 @@ function Home() {
     const [res, setRes] = useState("")
 
     const buttons = ["C", "9", "/", "8", "7", "6", "*", "5", "4", "3", "+", "2", "1", "0", "-", ".", "Del", "="];
-
+    
+    //Evaluates the function.
     const findval = () => {
         let result = Function("return " + res) ();
         setRes(result.toString());
@@ -20,7 +21,7 @@ function Home() {
             setRes("");
             return;
         }
-
+        //eval
         if(arg === "C") setRes("");
         else if( arg === "=") findval();
         else if( arg === "Del"){
@@ -29,7 +30,6 @@ function Home() {
                 setRes(res.slice(0,n-1));
         }
         else setRes(res.concat(arg));
-
 
     }
     

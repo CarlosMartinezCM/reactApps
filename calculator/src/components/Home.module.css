@@ -21,14 +21,16 @@
 .inner {
     height: 640px;
     width: 425px;
+    color: white;
     border-radius: 30px;
-    background-color: black;
+    background-color: rgb(91, 91, 91);
     box-shadow: 20px 20px 60px #8e8d8d,
         -20px -20px 60px #ffff;
 }
 
 .result {
     font-size: 2rem;
+    color: white;
     width: 405px;
     height: 90px;
     scrollbar-width: none;
@@ -36,7 +38,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 30px;
-    background-color: black;
+    background-color: rgb(95, 95, 95);
     box-shadow: 10px 10px 30px #8e8d8d,
         -10px -10px 30px #ffff;
 }
