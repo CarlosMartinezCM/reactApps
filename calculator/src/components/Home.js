@@ -8,10 +8,12 @@ function Home() {
 
     const buttons = ["C", "9", "/", "8", "7", "6", "*", "5", "4", "3", "+", "2", "1", "0", "-", ".", "Del", "="];
     
+    const mapButtons = Array.from(buttons.keys());
+
     //Evaluates the function.
     const findval = () => {
         let result = Function("return " + res) ();
-        setRes(result.toString());
+        setRes(result.toString());  
     }
 
     const handler = (arg) => {
@@ -23,16 +25,29 @@ function Home() {
         }
         //eval
         if(arg === "C") setRes("");
-        else if( arg === "=") findval();
+        else if( arg === "=") { 
+            findval();
+            mapButtons.forEach( element => {
+                if(mapButtons.includes(element)) console.log(`Element ${element} is in the Map values.`);
+                
+                //clearScreen(); 
+            })
+           
+        }
         else if( arg === "Del"){
             let n = res.length;
             if(n>0)
                 setRes(res.slice(0,n-1));
         }
         else setRes(res.concat(arg));
+        
 
     }
-    
+    //after results I should clear the results screen if another number is entered.
+    // const clearScreen = () => {
+    //     setRes("");
+    // }
+
     return (
         <div className={classes.home}>
             <div className={classes.inner}>
