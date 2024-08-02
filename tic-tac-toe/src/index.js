@@ -15,6 +15,7 @@ const Square = (props) => {
 };
 
 const Board = () => {
+  //Initiallize the board. 
   const initialSquares = Array(9).fill(null);
   const [squares, setSquares] = useState(initialSquares);
   const [xIsNext, setXIsNext] = useState(true);
@@ -22,10 +23,11 @@ const Board = () => {
   const handleClickEvent = (i) => {
     const newSquares = [...squares];
 
+    //Determine the winner 'X' or 'O'
     const winnerDeclared = Boolean(calculateWinner(newSquares));
     const squareFilled = Boolean(newSquares[i]);
-    if (winnerDeclared ||squareFilled) {
-      return;
+    if (winnerDeclared || squareFilled) {
+      return Board;
     }
 
     newSquares[i] = xIsNext ? 'X' : 'O';
@@ -46,6 +48,7 @@ const Board = () => {
   const status = winner ?
     `Winner: ${winner}` :
     `Next player: ${xIsNext ? 'X' : 'O'}`;
+
 
   return (
     <div>
@@ -68,9 +71,22 @@ const Game = () => {
     <div className='game'>
       Tic-Tac-Toe
       <Board />
+      <button 
+        className='resetGameBtn'
+        onClick={resetGame}>
+        reset game
+      </button>
     </div>
+
   );
 };
+function resetGame() {
+
+    alert(`reset button pressed`);
+    return (
+      <Game />
+    );
+  };
 
 function calculateWinner(squares) {
   const lines =[

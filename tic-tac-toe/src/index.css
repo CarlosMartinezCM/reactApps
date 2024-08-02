@@ -36,3 +36,11 @@ body {
   margin: 20px;
   font-size: 24px;
 }
+
+.resetGameBtn {
+  margin: 20px;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  align-items: center;
+}
