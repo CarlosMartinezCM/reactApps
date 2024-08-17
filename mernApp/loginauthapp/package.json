@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "dev": "react-scripts start"
+    "dev": "concurrently --verbose \"npm run server\" \"npm start --prefix client\""
+
   },
   "keywords": [],
   "author": "",
@@ -15,14 +16,20 @@
     "argon2": "^0.40.3",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.5.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.3",
     "node": "^22.6.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
     "babel": "^6.23.0",
+    "concurrently": "^8.2.2",
     "eslint": "^9.8.0",
     "nodemon": "^3.1.4",
     "webpack": "^5.93.0"

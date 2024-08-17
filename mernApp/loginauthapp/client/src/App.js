@@ -1,20 +1,20 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Register from "./components/Register";
-import Login from "./component/Login";
-import Login from "./Home";
+import Login from "./components/Login"; // Fixed typo in import path
+import Home from "./Home"; // Ensure correct path if Home is in components folder
 
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/" component={Home} />
-      </Switch>
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default App;
