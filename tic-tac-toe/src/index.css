@@ -3,6 +3,11 @@ body {
   color: white;
   margin: 20px;
   font: 32px "Century Gothic", Futura, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .game {

@@ -27,6 +27,7 @@ const Board = () => {
     const winnerDeclared = Boolean(calculateWinner(newSquares));
     const squareFilled = Boolean(newSquares[i]);
     if (winnerDeclared || squareFilled) {
+      alert(`we have a winner`);
       return Board;
     }
 
@@ -49,6 +50,14 @@ const Board = () => {
     `Winner: ${winner}` :
     `Next player: ${xIsNext ? 'X' : 'O'}`;
 
+  // const status = () => {
+  //   if(status === winner)
+  //     return (`Winner: ${winner}`);
+  //   if(status !== winner)
+  //     return (`Next player: ${xIsNext ? 'X' : 'O'}`);
+  //  };
+
+  
 
   return (
     <div>
@@ -99,6 +108,7 @@ function calculateWinner(squares) {
     const [a, b, c] = line;
 
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+
       return squares[a]; // 'X' or 'O'
     }
   }
