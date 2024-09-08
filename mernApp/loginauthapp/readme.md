@@ -9,3 +9,7 @@ Installed NVM (Node Version Manager) for node.js updates.
 To run server and application at the same time
 npm i -D concurrently
 
+To run use $ npm run dev    in root. 
+
+
+

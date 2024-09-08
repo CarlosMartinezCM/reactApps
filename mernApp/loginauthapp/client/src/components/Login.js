@@ -1,5 +1,4 @@
-// In Login.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -10,6 +9,7 @@ const Login = (props) => {
         error: null
     });
     const { email, password, error } = data;
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login status
     const navigate = useNavigate();
 
     const handleChange = e => {
@@ -19,13 +19,14 @@ const Login = (props) => {
             [name]: value
         }));
     };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setData(prevData => ({ ...prevData, error: null }));
 
         try {
             const res = await axios.post(
-                "/auth/login",
+                "auth/login",
                 { email, password },
                 {
                     headers: {
@@ -34,13 +35,20 @@ const Login = (props) => {
                 }
             );
             localStorage.setItem("token", res.data.token);
-            navigate("/"); // Use navigate from react-router-dom v6
+            setIsLoggedIn(true); // Set login status to true on successful login
         } catch (err) {
             const errorMessage = err.response ? err.response.data.error : "An error occurred";
             setData(prevData => ({ ...prevData, error: errorMessage }));
         }
     };
-    
+
+    // Redirect to home page after successful login
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate("/"); // Redirect to home page
+        }
+    }, [isLoggedIn, navigate]);
+
     return (
         <div className='form mt-5'>
             <h4 className='text-muted text-center mb-5'>Create an account</h4>
@@ -68,12 +76,10 @@ const Login = (props) => {
                     <div className='text-centered'>
                         <button className='btn btn-primary' onClick={handleSubmit}>Login</button>
                     </div>
-                
                 </form>
-                <div>
-                </div>
             </div>
         </div>
     );
 }
+
 export default Login;

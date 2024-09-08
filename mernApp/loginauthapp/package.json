@@ -5,9 +5,9 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "dev": "concurrently --verbose \"npm run server\" \"npm start --prefix client\""
+    "dev": "concurrently \"npm run server\" \"npm start --prefix client\""
 
-  },
+  },"proxy": "http://localhost:5000",
   "keywords": [],
   "author": "",
   "license": "ISC",
