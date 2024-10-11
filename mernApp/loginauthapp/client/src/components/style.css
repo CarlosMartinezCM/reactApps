@@ -1,0 +1,37 @@
+body {
+    display: block;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.content {
+    left: auto;
+    margin: 50px auto;
+    max-width: 600px;
+    min-width: 280px;
+    position:relative;
+    top: auto;
+    width: auto;
+    
+}
+.picksForm {
+    display: block;
+    text-align: center;
+    background-color: rgb(212, 216, 244);
+    
+}
+
+.loginCard {
+    background-color: beige;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+
+.loginForm {
+    text-align: center;
+}
