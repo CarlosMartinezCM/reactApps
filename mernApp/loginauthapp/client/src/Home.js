@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import Navbar from "./components/Navbar.js"
 
 const Home = (props) => {
     const [user, setUser] = useState(null);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const { isLoggedIn, setIsLoggedIn } = props;
     const navigate = useNavigate();
 
     // Memoize getUser to avoid redefinition on each render
@@ -37,21 +38,43 @@ const Home = (props) => {
 
     const logout = () => {
         localStorage.removeItem('token');
+        setIsLoggedIn(false);
         navigate("/login");
     }
 
     if (!isLoggedIn) {
         return <p>Loading...</p>; // Show a loading state until user data is fetched
     }
- 
+
     return (
-        <div className='homePage'>
+
+        <div className='body'>
             <div className='jumbotron'>
-                <p className='lead'>Welcome {user && user.name}</p>
-                <button className='btn btn-danger' onClick={logout}>Logout</button>
+                <div className="home">
+                    <header className="hero">
+                        <h1>Welcome  {user && user.name} to the Website!</h1>
+                        <p>Your one-stop solution for all your needs.</p>
+                        <button className="cta-button">Get Started(clickable)</button>
+                    </header>
+                    <main>
+                        <section className="features">
+                            <h2>Layout under construction</h2>
+                            <div className="feature-items">
+                                <div className="feature-item">
+                                    <h3>Features will include</h3>
+                                    <p>A lot of things!!!!</p>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                    <footer className="footer">
+                        <p>&copy; The footer</p>
+                    </footer>
+                </div>
+                {isLoggedIn && (<button className='btn btn-danger' onClick={logout}>Logout</button>)}
             </div>
         </div>
     );
-};
+}
 
 export default Home;

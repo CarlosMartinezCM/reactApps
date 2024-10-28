@@ -1,0 +1,30 @@
+.navbar {
+
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+ .nav-links {
+    list-style-type: none; /* Remove bullet points */
+    justify-content: space-between;
+    display: flex;
+    margin: 0;
+    padding: 0 20rem; /*Adds padding(space) from left and right hand side*/
+    flex: 1;
+    text-align: center;
+  }
+  
+ .nav-links li {
+    margin-right: 1rem;
+  }
+  
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }

@@ -49,9 +49,13 @@ const Login = (props) => {
         }
     }, [isLoggedIn, navigate]);
 
+    const createAccount = () => {
+        navigate("/Register"); // Redirect to create an account page
+    };
+
     return (
-        <div className='form mt-5'>
-            <h4 className='text-muted text-center mb-5'>Create an account</h4>
+        <div className='body'>
+            <h4 className='text-muted text-center mb-5'>Welcome</h4>
             <div className='card p-5 shadow'>
                 <form>
                     <div className='form-group'>
@@ -75,6 +79,10 @@ const Login = (props) => {
                     {error ? <p className='text-danger'>{error}</p> : null}
                     <div className='text-centered'>
                         <button className='btn btn-primary' onClick={handleSubmit}>Login</button>
+                    </div>
+                    <br />
+                    <div className='text-centered'>
+                        <button className='btn btn-primary' onClick={createAccount}>create and account</button>
                     </div>
                 </form>
             </div>
