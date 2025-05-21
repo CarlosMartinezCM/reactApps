@@ -12,5 +12,6 @@ npm i -D concurrently
 
 To run use $ npm run dev    in root. 
 
+What is the proxy that the app is running on? 
 
 
